@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "../components/Footer";
 
 const BaseLayout = ({ children }) => (
   <div>
@@ -6,6 +7,7 @@ const BaseLayout = ({ children }) => (
       <title>Club Clasifier</title>
     </Head>
     {children}
+    <Footer />
   </div>
 );
 
