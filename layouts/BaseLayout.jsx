@@ -6,7 +6,7 @@ const BaseLayout = ({ children }) => (
     <Head>
       <title>Club Clasifier</title>
     </Head>
-    {children}
+    <main className="m-5">{children}</main>
     <Footer />
   </div>
 );
