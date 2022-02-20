@@ -14,6 +14,9 @@ const Home = ({ club }) => {
           height="200"
         />
         <h1 className="text-center">{club.name}</h1>
+        <div className="flex">
+          <p>{club.member_count}</p>
+        </div>
         {/* <p className="mt-2 text-justify">{club.description}</p> */}
       </div>
     </BaseLayout>
