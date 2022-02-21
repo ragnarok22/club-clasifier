@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --strava-color: #fc4c01;
+}
+
+
+button {
+  @apply p-2 rounded-md;
+}
+
+h1 {
+  @apply text-2xl font-bold;
+}
+
+.strava {
+  background-color: var(--strava-color);
+  color: white;
+}
