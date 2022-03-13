@@ -6,16 +6,9 @@ export default async function authAthlete(req, res) {
   } = req;
 
   try {
-    const has_read_scope = scope.includes("activity:read_all");
-    const payload = await strava.oauth.getRequestAccessURL({
-      scope: has_read_scope ? "activity:read_all" : "activity:read",
-    });
+    const payload = await strava.oauth.getToken(code);
 
-    res.status(200).json({
-      code,
-      scope,
-      has_read_scope,
-    });
+    res.status(200).json(payload);
   } catch (error) {
     res.status(500).json({
       error,

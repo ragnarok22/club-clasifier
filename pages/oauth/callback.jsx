@@ -16,8 +16,9 @@ const StravaCallback = () => {
         axios
           .get("/api/oauth/callback", { params: { code, scope } })
           .then((response) => {
-            const { code, has_read_scope, scope } = response.data;
-            router.push("/");
+            console.log(response)
+            // const { code, has_read_scope, scope } = response.data;
+            // router.push("/");
           })
           .catch((error) => {
             console.error(error);
