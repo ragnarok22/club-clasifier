@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --strava-color: #fc4c01;
+  --strava-color: rgb(252, 76, 1);
+  --strava-color-disabled: rgb(252 76 1 / 80%);
 }
 
 
@@ -18,4 +19,9 @@ h1 {
 .strava {
   background-color: var(--strava-color);
   color: white;
+}
+
+.strava:disabled {
+  background-color: var(--strava-color-disabled);
+  color: #333;
 }
