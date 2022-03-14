@@ -1,10 +1,11 @@
 import strava from "strava-v3";
+import { access_token, client_id, client_secret, redirect_uri } from ".";
 
 strava.config({
-  access_token: process.env.STRAVA_ACCESS_TOKEN,
-  client_id: process.env.STRAVA_CLIENT_ID,
-  client_secret: process.env.STAVA_CLIENT_SECRET,
-  redirect_uri: process.env.STRAVA_REDIRECT_URI,
+  access_token,
+  client_id,
+  client_secret,
+  redirect_uri,
 });
 
 export default strava;
