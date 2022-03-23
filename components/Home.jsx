@@ -1,13 +1,12 @@
 import Image from "next/image";
-import { useAppContext } from "../context/authContext";
+import useAuth from "../hooks/useAuth";
 import BaseLayout from "../layouts/BaseLayout";
 import stravaImg from "../resources/images/stravax32.png";
 import Loader from "./Loader";
 
 const Home = ({ onLogin, loading }) => {
-  const context = useAppContext()
+  const auth = useAuth();
 
-  console.log(context);
   const club = {
     profile:
       "https://dgalywyr863hv.cloudfront.net/pictures/clubs/542243/12567539/2/large.jpg",

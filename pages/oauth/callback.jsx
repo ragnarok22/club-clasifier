@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Loader from "../../components/Loader";
+import useAuth from "../../hooks/useAuth";
 
 const StravaCallback = () => {
   const router = useRouter();
+  const { auth, login } = useAuth();
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -16,9 +18,10 @@ const StravaCallback = () => {
         axios
           .get("/api/oauth/callback", { params: { code, scope } })
           .then((response) => {
-            console.log(response)
+            login(response.data);
+
             // const { code, has_read_scope, scope } = response.data;
-            // router.push("/");
+            router.push("/profile");
           })
           .catch((error) => {
             console.error(error);
