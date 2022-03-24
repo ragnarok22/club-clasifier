@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import Loader from "../../components/Loader";
 import useAuth from "../../hooks/useAuth";
+import { createProfile } from "../../utils/profile";
 
 const StravaCallback = () => {
   const router = useRouter();
@@ -19,6 +20,26 @@ const StravaCallback = () => {
           .get("/api/oauth/callback", { params: { code, scope } })
           .then((response) => {
             login(response.data);
+
+            // save data in supabase
+            createProfile({
+              id: response.data.athlete.id,
+              access_token: response.data.access_token,
+              bio: response.data.athlete.bio,
+              city: response.data.athlete.city,
+              country: response.data.athlete.country,
+              created_at: response.data.athlete.created_at,
+              firstname: response.data.athlete.firstname,
+              lastname: response.data.athlete.lastname,
+              premium: response.data.athlete.premium,
+              profile: response.data.athlete.profile,
+              profile_medium: response.data.athlete.profile_medium,
+              sex: response.data.athlete.sex,
+              state: response.data.athlete.state,
+              username: response.data.athlete.username,
+              weight: response.data.athlete.weight,
+              refresh_token: response.data.refresh_token,
+            });
 
             // const { code, has_read_scope, scope } = response.data;
             router.push("/profile");

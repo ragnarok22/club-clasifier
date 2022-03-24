@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import useAuth from "../hooks/useAuth";
 import BaseLayout from "../layouts/BaseLayout";
 import Image from "next/image";
+import { getProfile } from "../utils/profile";
 
 const Profile = () => {
   const { auth } = useAuth();
@@ -33,6 +34,27 @@ const Profile = () => {
           <h2>{auth.athlete.bio}</h2>
         </div>
       </div>
+      {
+        /*
+          ATHLETE
+          access_token
+          bio
+          city
+          country
+          created_at
+          firstname
+          id
+          lastname
+          premium
+          profile
+          profile_medium
+          sex
+          state
+          username
+          weight
+          refresh_token
+        */
+      }
     </BaseLayout>
   );
 };
