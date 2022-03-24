@@ -17,8 +17,8 @@ const Profile = () => {
 
   return (
     <BaseLayout>
-      <div className="flex">
-        <div className="mr-5">
+      <div className="flex flex-wrap md:flex-nowrap">
+        <div className="w-full text-center md:w-1/3 md:pr-5">
           <Image
             src={auth.athlete.profile}
             alt={auth.athlete.firstname}
@@ -27,7 +27,7 @@ const Profile = () => {
             className="rounded-full"
           />
         </div>
-        <div>
+        <div className="w-full text-center md:text-left md:w-2/3">
           <h1>
             {auth?.athlete.firstname} {auth?.athlete.lastname}
           </h1>
